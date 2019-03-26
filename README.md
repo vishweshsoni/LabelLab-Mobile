@@ -6,7 +6,6 @@ Machine learning supported web-base image labelling tool for researcher.
 
 # Backend
 This is the prototype And its Backend has been developed using node.js.<br>
-It's Deployed on heroku and You can see api demo here : <a href="https://radiant-harbor-82820.herokuapp.com/animal">Herokuapp</a>
 Link to the Node app GithubRepo is :<a href="https://github.com/vishweshsoni/LabelLab">NodeGithub</a>
 <br><br><br>
 [![Codemagic build status](https://api.codemagic.io/apps/5c98eb5b6023d0001e22037c/5c98eb5b6023d0001e22037b/status_badge.svg)](https://codemagic.io/apps/5c98eb5b6023d0001e22037c/5c98eb5b6023d0001e22037b/latest_build)
