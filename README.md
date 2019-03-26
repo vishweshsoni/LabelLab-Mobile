@@ -1,6 +1,6 @@
 [![Codemagic build status](https://api.codemagic.io/apps/5c98eb5b6023d0001e22037c/5c98eb5b6023d0001e22037b/status_badge.svg)](https://codemagic.io/apps/5c98eb5b6023d0001e22037c/5c98eb5b6023d0001e22037b/latest_build)
 
-# label_lab
+# LabelLab-Mobile
 
 A new Flutter application.
 
