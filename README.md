@@ -26,7 +26,6 @@ Android and ios Both build and also test has been Passed.
           flutter run
           # A device with USB debugging enabled | OR | virtual device is required
           ```
- # Images:
     
 
 
