@@ -12,7 +12,7 @@ This is the prototype And its Mobile App is Developed Using Flutter.
 <br>
 Currently mobile app can take photos from gallary and camera and send it to the server then in response server gives the Height and Width of image and it's displays on application.
 Android and ios Both build and also test has been Passed.
-# How to setup ?:
+# How to setup ?
    + Clone the repository
    + Build and run app 
    1. Navigate to The Directory:<br>
@@ -34,3 +34,6 @@ Android and ios Both build and also test has been Passed.
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.io/docs), which offers tutorials, 
 samples, guidance on mobile development, and a full API reference.
+
+## Author
+[Vishweshsoni](http://github.com/vishweshsoni)
