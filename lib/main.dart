@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       decoration: new BoxDecoration(color: Colors.white),
       child: MaterialApp(
         debugShowCheckedModeBanner: false ,
-        title: 'Flutter Demo',
+        title: 'LabelLab',
         theme: ThemeData(
           primaryColor: Colors.white,
 

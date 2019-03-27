@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:label_lab/modal.dart';
 import 'package:label_lab/models/animals_desc.dart';
+import 'package:label_lab/screens/result_classification.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 import 'package:dio/dio.dart';
@@ -11,11 +12,8 @@ import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 import 'package:progress_hud/progress_hud.dart';
 
-
 class ImageClassifyScreen extends StatefulWidget {
   final File image;
-
-
 
   ImageClassifyScreen(this.image);
 
@@ -24,92 +22,150 @@ class ImageClassifyScreen extends StatefulWidget {
 }
 
 class _ImageClassifyScreenState extends State<ImageClassifyScreen> {
-  var isLoading = false;
-  var count = 0;
 
 
 
-  void _setState() {
-    setState(() {
-      count = 1;
-    });
-  }
 
-  Future<Animal_Desc> _getHeightWidth(File image) async {
-    setState(() {
-      count=1;
-      isLoading=false;
-    });
-    Dio dio = new Dio();
-    FormData formData = new FormData();
-    formData.add("animalimage",
-        UploadFileInfo(image, basename(image.path
-            .split("/")
-            .last)));
-    final response = await dio.post(
-        'https://radiant-harbor-82820.herokuapp.com/animal/upload',
-        data: formData);
-    var re = jsonDecode(response.toString());
-    return Animal_Desc.fromJson(re);
-  }
-  modal modal_1 =new modal();
+
+  modal modal_1 = new modal();
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Material(
         child: Stack(
           children: <Widget>[
-
             Container(
-                  height: 700.0,
-                  child:PhotoView(
-
-                      imageProvider:FileImage(widget.image),
-                  ) ,
-            ),
-            Align(
-              alignment: FractionalOffset.topLeft,
-              child: Container(
-                margin: EdgeInsets.only(top: 10.0),
-                child:IconButton(
-                  icon:Icon(
-                    Icons.arrow_back,
-                    color:Colors.white,
-                    size: 30.0,
+              color: Colors.white,
+              child: SafeArea(
+                child: Align(
+                  alignment: FractionalOffset.center,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      boxShadow: [
+                        new BoxShadow(
+                          color: Colors.black,
+                          blurRadius: 12.0,
+                        ),
+                      ],
+                      image: DecorationImage(
+                          image: FileImage(widget.image), fit: BoxFit.cover),
+                    ),
+                    height: 450.0,
+                    width: 350.0,
+                    margin:
+                        EdgeInsets.only(left: 40.0, right: 40.0, bottom: 20.0),
                   ),
-                  onPressed: ()=>Navigator.pop(context,false),
+                ),
+              ),
+            ),
+            Container(
+              alignment: FractionalOffset.topLeft,
+              margin: EdgeInsets.only(top: 30.0,left:1.0,right:300.0),
+              child: MaterialButton(
+                child: Icon(
+                  Icons.arrow_back,
+                  size: 30.0,
+                  color: Colors.black45,
+                ),
+                onPressed:() => Navigator.pop(context, false),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top:33.0),
+              alignment: FractionalOffset.topCenter,
+              child:Text(
+                'LabelLab',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontWeight:  FontWeight.bold,
+                  fontFamily: 'Timesroman',
                 ),
               ),
             ),
             Align(
-                alignment: FractionalOffset.bottomCenter,
-
-                  child: Container(
-
+              alignment: FractionalOffset.bottomCenter,
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(left: 80.0, bottom: 20.0),
                     height: 50.0,
-                    margin: EdgeInsets.only(bottom: 2.0),
-                    child: Material(
-
-                        color:Colors.black,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: <Widget>[
-
-                           IconButton(
-                             icon: new Icon(Icons.keyboard_arrow_up),
-                             color: Colors.white,
-                             iconSize: 45.0,
-                             onPressed: () => modal_1.mainBottomSheet(context,widget.image),
-                           ),
-
-                              ],
+                    width: 190.0,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF191925),
+                      borderRadius: BorderRadius.circular(11.0),
+                    ),
+                    child: MaterialButton(
+                      child: Center(
+                        child: Text(
+                          'Classify',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: "Ewert",
+                            fontSize: 17.0,
+                          ),
                         ),
 
+                      ),
+                      onPressed: ()=>{Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Result(widget.image)))}
+                    ),
+//                  icon:Icon(
+//                    Icons.arrow_back,
+//                    color:Colors.white,
+//                    size: 30.0,
+//                  ),
+//                  onPressed: ()=>Navigator.pop(context,false),
                   ),
+//                  Container(
+//                    margin: EdgeInsets.only(
+//                      left: 20.0,
+//                      bottom: 20.0,
+//                    ),
+//                    height: 50.0,
+//                    width: 50.0,
+//                    decoration: BoxDecoration(
+//                      color: Colors.transparent,
+//                      borderRadius: BorderRadius.circular(11.0),
+//                      border: Border.all(
+//                        color: Color(0xFF191925),
+//                      ),
+//                    ),
+//                    child: MaterialButton(child: Icon(Icons.chevron_right,size: 22.0,),onPressed:()=>{Navigator.of(context).push(
+//                        MaterialPageRoute(builder: (context) => ImageClassifyScreen(widget.image)))} ),
+//                  ),
+                ],
               ),
-            )
-//            FutureBuilder<Animal_Desc>(
+            ),
+//            Align(
+//                alignment: FractionalOffset.bottomCenter,
+//
+//                  child: Container(
+//
+//                    height: 50.0,
+//                    margin: EdgeInsets.only(bottom: 2.0),
+//                    child: Material(
+//
+//                        color:Colors.black,
+//                        child: Row(
+//                          mainAxisAlignment: MainAxisAlignment.end,
+//                          children: <Widget>[
+//
+//                           IconButton(
+//                             icon: new Icon(Icons.keyboard_arrow_up),
+//                             color: Colors.white,
+//                             iconSize: 45.0,
+//                             onPressed: () => modal_1.mainBottomSheet(context,widget.image),
+//                           ),
+//
+//                              ],
+//                        ),
+//
+//                  ),
+//              ),
+//            )
+//          FutureBuilder<Animal_Desc>(
 //                future: _getHeightWidth(widget.image),
 //              builder: (context, snapshot) {
 //
@@ -199,11 +255,11 @@ class _ImageClassifyScreenState extends State<ImageClassifyScreen> {
 //                  }
 //
 //                      return ProgressHUD(
-//                          containerColor: Colors.black87,
+//                          containerColo   r: Colors.black87,
 //                          color: Colors.white10,
 //                          backgroundColor: Colors.grey,
-//                        borderRadius: 5.0,
-//                        text: 'Loading...',
+//                          borderRadius: 5.0,
+//                          text: 'Loading...',
 //
 //                      );
 //              },
