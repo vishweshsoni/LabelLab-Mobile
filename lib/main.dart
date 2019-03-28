@@ -12,6 +12,10 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false ,
         title: 'LabelLab',
+        routes: <String, WidgetBuilder>{
+          '/home': (context) => MyHomePage(),
+//          '/second': (context) => SecondHome(),
+        },
         theme: ThemeData(
           primaryColor: Colors.white,
 

@@ -46,10 +46,17 @@ class _ResultState extends State<Result> {
               image: new FileImage(widget.image),
               fit: BoxFit.cover,
             ),
-
           ),
           child: Stack(
             children: <Widget>[
+                Container(
+                  margin: EdgeInsets.only(top:5.0,right: 450.0),
+                  child: MaterialButton(
+                      child: Icon(Icons.close,color:Colors.white,size: 30.0),
+                      onPressed: ()=>{Navigator.of(context).pushNamedAndRemoveUntil('/home', (Route<dynamic> route) => false),}
+                  ),
+                ),
+
                 FutureBuilder<Animal_Desc>(
                     future: _getHeightWidth(widget.image),
                     builder: (context,snapshot){
