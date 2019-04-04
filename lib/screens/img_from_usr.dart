@@ -41,11 +41,11 @@ class _ImageClassifyScreenState extends State<ImageClassifyScreen> {
                   alignment: FractionalOffset.center,
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
+                      borderRadius: BorderRadius.circular(9.0),
                       boxShadow: [
                         new BoxShadow(
-                          color: Colors.black,
-                          blurRadius: 12.0,
+                          color: Color(0xFF7C57F8),
+                          blurRadius: 2.0,
                         ),
                       ],
                       image: DecorationImage(
@@ -66,7 +66,7 @@ class _ImageClassifyScreenState extends State<ImageClassifyScreen> {
                 child: Icon(
                   Icons.arrow_back,
                   size: 30.0,
-                  color: Colors.black45,
+                  color: Color(0xFF7C57F8),
                 ),
                 onPressed:() => Navigator.pop(context, false),
               ),
@@ -77,7 +77,7 @@ class _ImageClassifyScreenState extends State<ImageClassifyScreen> {
               child:Text(
                 'LabelLab',
                 style: TextStyle(
-                  color: Colors.black,
+                  color: Color(0xFF7C57F8),
                   fontSize: 30,
                   fontWeight:  FontWeight.bold,
                   fontFamily: 'Timesroman',
@@ -93,7 +93,7 @@ class _ImageClassifyScreenState extends State<ImageClassifyScreen> {
                     height: 50.0,
                     width: 190.0,
                     decoration: BoxDecoration(
-                      color: Color(0xFF191925),
+                      color: Color(0xFF7C57F8),
                       borderRadius: BorderRadius.circular(11.0),
                     ),
                     child: MaterialButton(

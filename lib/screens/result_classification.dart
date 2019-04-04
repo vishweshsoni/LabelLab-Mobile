@@ -55,7 +55,7 @@ class _ResultState extends State<Result> {
                       child: Icon(Icons.close,color:Colors.white,size: 30.0),
                       onPressed: ()=>{Navigator.of(context).pushNamedAndRemoveUntil('/home', (Route<dynamic> route) => false),}
                   ),
-                ),
+                 ),
 
                 FutureBuilder<Animal_Desc>(
                     future: _getHeightWidth(widget.image),
@@ -82,7 +82,7 @@ class _ResultState extends State<Result> {
                                               Text('NULL',
                                                 textAlign: TextAlign.left,
                                                 style: TextStyle(
-                                                    color: Colors.black,
+                                                    color:Color(0xFF7C57F8),
                                                     fontSize:20.0
                                                 ),
                                               ),
@@ -92,7 +92,7 @@ class _ResultState extends State<Result> {
                                               Text('Height',
                                                 textAlign: TextAlign.left,
                                                 style: TextStyle(
-                                                    color: Colors.black,
+                                                    color: Color(0xFF7C57F8),
                                                     fontSize:12.0
                                                 ),
                                               ),
@@ -120,7 +120,7 @@ class _ResultState extends State<Result> {
                                               Text('NULL',
                                                 textAlign: TextAlign.left,
                                                 style: TextStyle(
-                                                    color: Colors.black,
+                                                    color: Color(0xFF7C57F8),
                                                     fontSize:20.0
                                                 ),
                                               ),
@@ -130,7 +130,7 @@ class _ResultState extends State<Result> {
                                               Text('Width',
                                                 textAlign: TextAlign.left,
                                                 style: TextStyle(
-                                                    color: Colors.black,
+                                                    color: Color(0xFF7C57F8),
                                                     fontSize:12.0
                                                 ),
                                               ),
@@ -164,7 +164,7 @@ class _ResultState extends State<Result> {
                                                             Text('${snapshot.data.height.toString()}',
                                                               textAlign: TextAlign.left,
                                                               style: TextStyle(
-                                                                color: Colors.black,
+                                                                color: Color(0xFF7C57F8),
                                                                 fontSize:20.0
                                                               ),
                                                             ),
@@ -174,7 +174,7 @@ class _ResultState extends State<Result> {
                                                             Text('Height',
                                                               textAlign: TextAlign.left,
                                                               style: TextStyle(
-                                                                  color: Colors.black,
+                                                                  color: Color(0xFF7C57F8),
                                                                   fontSize:12.0
                                                               ),
                                                             ),
@@ -202,7 +202,7 @@ class _ResultState extends State<Result> {
                                                     Text('${snapshot.data.width.toString()}',
                                                       textAlign: TextAlign.left,
                                                       style: TextStyle(
-                                                          color: Colors.black,
+                                                          color: Color(0xFF7C57F8),
                                                           fontSize:20.0
                                                       ),
                                                     ),
@@ -212,8 +212,8 @@ class _ResultState extends State<Result> {
                                                     Text('Width',
                                                       textAlign: TextAlign.left,
                                                       style: TextStyle(
-                                                          color: Colors.black,
-                                                          fontSize:12.0
+                                                          color: Color(0xFF7C57F8),
+                                                          fontSize:12.0,
                                                       ),
                                                     ),
 

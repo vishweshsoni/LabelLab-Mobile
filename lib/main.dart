@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:label_lab/screens/HomePage.dart';
+import 'package:label_lab/screens/newhomepage.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false ,
         title: 'LabelLab',
         routes: <String, WidgetBuilder>{
-          '/home': (context) => MyHomePage(),
+//          '/home': (context) => MyHomePage(),
+        '/home':(context) => NewHomePage(),
 //          '/second': (context) => SecondHome(),
         },
         theme: ThemeData(
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
 
           accentColor: Colors.white,
         ),
-        home: MyHomePage(),
+        home: NewHomePage(),
       ),
     );
   }
