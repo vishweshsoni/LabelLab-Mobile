@@ -18,8 +18,8 @@ Android and ios Both build and also test has been Passed.
    1. Navigate to The Directory:<br>
    2. Build Flutter application:<br>
         ```
-        flutter build apk
-        for ios instead of apk to build for iOS
+        android:flutter build apk
+        for ios:flutter build ios
         ```
    3.  Run the Application
           ```
